@@ -1,5 +1,6 @@
 package org.saucedemo.pages;
 
+import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.Page;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class InventoryPage extends BasePage {
 
     private final String sortProductsDropdown = "[data-test='product_sort_container']";
     private final String addToCartButton = "[data-test^='add-to-cart-']";
+    private final String removeFromCartButton = "[data-test^='remove-']";
 
 
     public void sortProduct(String value) {
@@ -27,4 +29,20 @@ public class InventoryPage extends BasePage {
         elementActions.clickButton("[data-test^='add-to-cart-"+ productName+"']");
     }
 
+    public void addMultipleProductsToCart(List<Integer> productList) {
+        for(int product: productList)
+            addProductToCart(product);
+    }
+
+    // Added for TestNG assertion. But used Playwright assertion in tests
+    public int addToCartButtonsCount() {
+        return page.locator(addToCartButton).count();
+    }
+
+    public void emptyCartIfItemsPresent() {
+        List<ElementHandle> removeButtons = page.querySelectorAll(removeFromCartButton);
+        for (ElementHandle removeButton : removeButtons) {
+            removeButton.click();
+        }
+    }
 }
