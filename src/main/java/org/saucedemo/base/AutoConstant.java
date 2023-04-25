@@ -30,9 +30,9 @@ public class AutoConstant {
 	public static final int product = 2;
 	public static final String productName = "sauce-labs-bike-light";
 	public static final List<Integer> productList = new ArrayList<Integer>(){{
-		add(1);
-		add(2);
 		add(3);
+		add(2);
+		add(1);
 	}};
 	
 }
