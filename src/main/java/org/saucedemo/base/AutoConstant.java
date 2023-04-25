@@ -26,5 +26,6 @@ public class AutoConstant {
 		put("Name (Z to A)", "za");
 	}};
 	public static final int product = 2;
+	public static final String productName = "sauce-labs-bike-light";
 	
 }

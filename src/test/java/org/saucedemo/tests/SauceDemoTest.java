@@ -25,6 +25,6 @@ public class SauceDemoTest extends BaseTest {
     public void verifyAddSingleProduct() {
         InventoryPage inventoryPage = new InventoryPage(page);
         inventoryPage.sortProduct(AutoConstant.sortValues.get("Price (high to low)"));
-        inventoryPage.addProductToCart(AutoConstant.product);
+        inventoryPage.addProductToCart(AutoConstant.productName);
     }
 }

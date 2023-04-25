@@ -1,7 +1,6 @@
 package org.saucedemo.pages;
 
 import com.microsoft.playwright.Page;
-import org.saucedemo.utils.ElementActions;
 
 public class AuthPage extends BasePage {
 

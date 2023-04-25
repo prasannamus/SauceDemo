@@ -1,7 +1,6 @@
 package org.saucedemo.pages;
 
 import com.microsoft.playwright.Page;
-import org.saucedemo.utils.ElementActions;
 
 import java.util.List;
 
@@ -24,5 +23,8 @@ public class InventoryPage extends BasePage {
         elementActions.clickButton(addToCartButton, productNumber-1);
     }
 
+    public void addProductToCart(String productName) {
+        elementActions.clickButton("[data-test^='add-to-cart-"+ productName+"']");
+    }
 
 }
