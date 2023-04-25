@@ -28,6 +28,15 @@ public class SauceDemoTest extends BaseTest {
         InventoryPage inventoryPage = new InventoryPage(page);
         inventoryPage.sortProduct(AutoConstant.sortValues.get("Price (high to low)"));
         inventoryPage.emptyCartIfItemsPresent();
+        inventoryPage.addProductToCart(AutoConstant.product);
+        assertThat(page.locator("[data-test^='add-to-cart-']")).hasCount(5);
+    }
+
+    @Test
+    public void verifyAddSingleProductusingName() {
+        InventoryPage inventoryPage = new InventoryPage(page);
+        inventoryPage.sortProduct(AutoConstant.sortValues.get("Price (high to low)"));
+        inventoryPage.emptyCartIfItemsPresent();
         inventoryPage.addProductToCart(AutoConstant.productName);
         assertThat(page.locator("[data-test^='add-to-cart-']")).hasCount(5);
     }
